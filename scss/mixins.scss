@@ -1,0 +1,57 @@
+@mixin btn($color, $bgcolor, $bgcolorhov,$colorhov, $brhov) {
+    font-weight: 700;
+    color: $color;
+    background-color: $bgcolor;
+    border: none;
+    border-radius: $brhov;
+
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $bgcolorhov;
+        border-radius: $brhov;
+        transform: scale(0);
+        transition: 0.5s;
+    }
+    &:hover::before {
+        
+        transform: scale(2);
+        
+    }
+    &:focus::before {
+        
+        transform: scale(2);
+        
+    }
+    &:active::before {
+        
+        transform: scale(2);
+        
+    }
+
+    &:hover {
+        
+        background: transparent;
+        color: $colorhov;
+    }
+    &:focus {
+        
+        background: transparent;
+        color: $colorhov;
+    }
+    &:active {
+        
+        background: transparent;
+        color: $colorhov;
+    }
+}

@@ -1,0 +1,152 @@
+@import "../scss/nullstyle.scss";
+@import "../scss/fonts.scss";
+@import "../scss/variables.scss";
+@import "../scss/mixins.scss";
+* {
+    font-family: Larsseit;
+    color: $darkblue;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1130px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header {
+
+    &_logo {
+    }
+
+    &__container {
+        padding-top: 27px;
+        padding-bottom: 23px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__nav {
+    }
+
+    &__nav-menu {
+    }
+
+    &__contact {
+        @include btn ($white, $lightblue, $darkblue, $white, 50px);
+        font-size: 14px;
+        padding: 20px 30px 19px 30px;
+    }
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: $lightblue;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        margin-right: 28px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+        
+    }
+    &__link {
+        
+        font-size: 14px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: -10px;
+            background-color: $darkblue;
+            height: 1px;
+            transition: 0.3s;
+            margin-top: 50px;
+            
+        }
+        &:hover::before {
+            right: 0;
+        }
+        &:focus::before {
+            right: 0;
+        }
+        &:active::before {
+            right: 0;
+        }
+    }
+}
+
+//banner
+.banner {
+    height: 840px;
+    background-color: #F4F9E2;
+    background-image: url(../img/block-1.png), url(../img/Rectangle.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        height: 64%;
+        max-width: 43%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+
+
+    &__title {
+        font-size: 48px;
+        line-height: 110%;
+        
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        line-height: 150%;
+        
+    }
+
+    &__button-container {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &__button {
+        @include btn ($orange, transparent , $orange, $white, 0);
+            
+        font-size: 16px;
+        line-height: 125%;
+        letter-spacing: 10%;
+        padding: 10px 30px;
+        margin-left: 8px;
+
+        &_active {
+            @include btn ($white, $orange, #f4f9e2, $orange, 0);
+            
+            font-size: 16px;
+            line-height: 125%;
+            letter-spacing: 10%;
+            padding: 10px 30px;
+        }
+    }
+
+    &__img {
+    }
+}

@@ -1,0 +1,335 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: "Larsseit";
+  src: local("Larsseit Light"), local("Larsseit-Light"), url("../fonts/Larsseit-Light.woff2") format("woff2"), url("../fonts/Larsseit-Light.woff") format("woff"), url("../fonts/Larsseit-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Larsseit";
+  src: local("Larsseit Regular"), local("Larsseit-Regular"), url("../fonts/Larsseit.woff2") format("woff2"), url("../fonts/Larsseit.woff") format("woff"), url("../fonts/Larsseit.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Larsseit";
+  src: local("Larsseit Medium"), local("Larsseit-Medium"), url("../fonts/Larsseit-Medium.woff2") format("woff2"), url("../fonts/Larsseit-Medium.woff") format("woff"), url("../fonts/Larsseit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Larsseit";
+  src: local("Larsseit Bold"), local("Larsseit-Bold"), url("../fonts/Larsseit-Bold.woff2") format("woff2"), url("../fonts/Larsseit-Bold.woff") format("woff"), url("../fonts/Larsseit-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  font-family: Larsseit;
+  color: #22356F;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1130px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.header__container {
+  padding-top: 27px;
+  padding-bottom: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__contact {
+  font-weight: 700;
+  color: #fff;
+  background-color: #62D0DF;
+  border: none;
+  border-radius: 50px;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  font-size: 14px;
+  padding: 20px 30px 19px 30px;
+}
+.header__contact::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #22356F;
+  border-radius: 50px;
+  transform: scale(0);
+  transition: 0.5s;
+}
+.header__contact:hover::before {
+  transform: scale(2);
+}
+.header__contact:focus::before {
+  transform: scale(2);
+}
+.header__contact:active::before {
+  transform: scale(2);
+}
+.header__contact:hover {
+  background: transparent;
+  color: #fff;
+}
+.header__contact:focus {
+  background: transparent;
+  color: #fff;
+}
+.header__contact:active {
+  background: transparent;
+  color: #fff;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #62D0DF;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-menu__item {
+  margin-right: 28px;
+}
+.nav-menu__item:last-child {
+  margin-right: 0;
+}
+.nav-menu__link {
+  font-size: 14px;
+  position: relative;
+}
+.nav-menu__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -10px;
+  background-color: #22356F;
+  height: 1px;
+  transition: 0.3s;
+  margin-top: 50px;
+}
+.nav-menu__link:hover::before {
+  right: 0;
+}
+.nav-menu__link:focus::before {
+  right: 0;
+}
+.nav-menu__link:active::before {
+  right: 0;
+}
+
+.banner {
+  height: 840px;
+  background-color: #F4F9E2;
+  background-image: url(../img/block-1.png), url(../img/Rectangle.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+.banner__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner__text {
+  height: 64%;
+  max-width: 43%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.banner__title {
+  font-size: 48px;
+  line-height: 110%;
+}
+.banner__subtitle {
+  font-size: 24px;
+  line-height: 150%;
+}
+.banner__button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+.banner__button {
+  font-weight: 700;
+  color: #F9B640;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 10%;
+  padding: 10px 30px;
+  margin-left: 8px;
+}
+.banner__button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F9B640;
+  border-radius: 0;
+  transform: scale(0);
+  transition: 0.5s;
+}
+.banner__button:hover::before {
+  transform: scale(2);
+}
+.banner__button:focus::before {
+  transform: scale(2);
+}
+.banner__button:active::before {
+  transform: scale(2);
+}
+.banner__button:hover {
+  background: transparent;
+  color: #fff;
+}
+.banner__button:focus {
+  background: transparent;
+  color: #fff;
+}
+.banner__button:active {
+  background: transparent;
+  color: #fff;
+}
+.banner__button_active {
+  font-weight: 700;
+  color: #fff;
+  background-color: #F9B640;
+  border: none;
+  border-radius: 0;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 10%;
+  padding: 10px 30px;
+}
+.banner__button_active::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f9e2;
+  border-radius: 0;
+  transform: scale(0);
+  transition: 0.5s;
+}
+.banner__button_active:hover::before {
+  transform: scale(2);
+}
+.banner__button_active:focus::before {
+  transform: scale(2);
+}
+.banner__button_active:active::before {
+  transform: scale(2);
+}
+.banner__button_active:hover {
+  background: transparent;
+  color: #F9B640;
+}
+.banner__button_active:focus {
+  background: transparent;
+  color: #F9B640;
+}
+.banner__button_active:active {
+  background: transparent;
+  color: #F9B640;
+}
