@@ -159,19 +159,13 @@
     background-position: right;
     height: 604px;
 
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-    }
 
     &__text {
         height: 100%;
         max-width: 50%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
 
     &__title {
@@ -193,15 +187,20 @@
     }
 
 }
-//About
+// //About
 
 .about {
     height: 366px;
 
     &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        max-width: 1235px;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 27% 46% 27%;
     }
 
     &__title {
@@ -210,22 +209,74 @@
         line-height: 23px;
         letter-spacing: 0.06em;
         align-self: center;
-        width: ((100%-46%)/2);
     }
 
-    &__content {
-        height: 50%;
-        width: 46%;
+    &__text {
         font-size: 24px;
         line-height: 34px;
         letter-spacing: 0.005em;
-    }
-    &__blank {
-        width: ((100%-46%)/2);
+        align-self: flex-end;
     }
 }
-.container_big {
-    max-width: 1235px;
-    margin: 0 auto;
-    height: 100%;
+//We can help you
+
+.we-can {
+
+    height: 595px;
+
+    &__container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 16px;
+        color: #909ab7;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: #000;
+    }
+
+    &__card {
+
+    }
+}
+.card {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 90%;
+    color: $white;
+}
+
+//Scroll
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: $orange;	
+	// background-image: -webkit-linear-gradient(45deg,
+	//                                           rgba(255, 255, 255, .2) 25%,
+	// 										  transparent 25%,
+	// 										  transparent 50%,
+	// 										  rgba(255, 255, 255, .2) 50%,
+	// 										  rgba(255, 255, 255, .2) 75%,
+	// 										  transparent 75%,
+	// 										  transparent)
 }
